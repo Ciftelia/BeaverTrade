@@ -5,7 +5,6 @@ To Do:
 - Create branches for test, dev, etc
 - Create search feature
 
-
 ## Get Started
 ``` 
 // Run In Terminal
@@ -13,6 +12,14 @@ cd my-app
 npm install
 npm run dev
 ```
+
+## Important
+If you want to add a feature:
+- First, create a branch with the name of the feature.
+- Develop in there, until you're sure it's working.
+- Create a pull request, I'll handle merging it.
+
+This is so we don't go over each other when we're working.
 
 ## Guide
 Files/Directories you should worry about are ⭐️ed.
