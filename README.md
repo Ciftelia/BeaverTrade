@@ -1,4 +1,11 @@
 # BeaverTrade
+
+##
+To Do:
+- Create branches for test, dev, etc
+- Create search feature
+
+
 ## Get Started
 ``` 
 // Run In Terminal
