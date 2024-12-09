@@ -1,0 +1,11 @@
+.search-bar-results {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.search-container {
+    position: fixed; 
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+}

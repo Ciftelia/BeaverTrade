@@ -1,9 +1,9 @@
-# BeaverTrade
+# BeaverTrade (SEARCH TESTING)
 
 ##
 To Do:
-- Create branches for test, dev, etc
-- Create search feature
+- Replace test search values with backend values
+- Clean up the code
 
 ## Get Started
 ``` 
