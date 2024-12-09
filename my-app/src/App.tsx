@@ -1,8 +1,9 @@
 import "./App.css";
-import { Search } from "./components/Search/Search";
+import { Search } from "./components/Search/mySearch";
+import { Header } from "./components/Header/Header";
 
 function App() {
-  return <Search />;
+  return <Header />;
 }
 
 export default App;

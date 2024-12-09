@@ -1,0 +1,10 @@
+/* Header.css */
+.title {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.search-container {
+  margin-top: 14px;
+  margin-left: 20px; /* Adjust the value as needed */
+}
