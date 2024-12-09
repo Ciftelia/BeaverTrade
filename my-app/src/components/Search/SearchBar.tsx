@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {FaSearch} from "react-icons/fa";
+import SearchIcon from '@mui/icons-material/Search';
 import "./SearchBar.css";
 
 
@@ -26,7 +26,7 @@ export const SearchBar = ({ setResults }) => {
     };
 
     return <div className={"input-wrapper"}>
-        <FaSearch id={"search-icon"}/>
+        <SearchIcon color='action'/>
         <input placeholder={`Type to search... `}
                value={input}
                onChange={(e) => handleChange(e.target.value)}
