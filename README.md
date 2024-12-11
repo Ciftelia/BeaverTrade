@@ -1,3 +1,9 @@
+# To do:
+- connect backend to autocomplete search
+- return desired objects when search button is clicked
+- deploy to aws or another service
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
