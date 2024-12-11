@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, IconButton, Autocomplete } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 const SearchBar = ({ setSearchQuery, options }) => {
   return (
     <form className="search-form">
-      <Autocomplete
+      <Autocomplete 
         freeSolo
         options={options.map((option) => option.name)}
         renderInput={(params) => (
@@ -16,6 +16,10 @@ const SearchBar = ({ setSearchQuery, options }) => {
             onInput={(e) => {
               setSearchQuery(e.target.value);
             }}
+            onClick={(e) => {
+              e.target.value = 
+            }
+          }
             variant="outlined"
             placeholder="By Category, Company or Brand"
             size="small"
@@ -24,7 +28,7 @@ const SearchBar = ({ setSearchQuery, options }) => {
         className="autocomplete"
       />
       <IconButton type="submit" aria-label="search">
-        <SearchIcon style={{ fill: 'blue' }} />
+        <SearchIcon style={{ fill: 'secondary' }} />
       </IconButton>
     </form>
   );
