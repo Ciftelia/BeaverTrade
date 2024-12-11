@@ -1,7 +1,6 @@
-import "./App.css";
-import { Search } from "./components/Search/mySearch";
-import { Header } from "./components/Header/Header";
 import React, { useEffect, useState } from "react";
+import { Header } from "./components/Header/Header";
+import './App.css'
 
 function App() {
   const [backendData, setBackendData] = useState([]); // Initialize as an array
@@ -35,4 +34,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

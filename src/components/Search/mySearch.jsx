@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { TextField, IconButton, Autocomplete } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-
-const SearchBar: React.FC<{ setSearchQuery: (query: string) => void, options: any[] }> = ({ setSearchQuery, options }) => {
+const SearchBar = ({ setSearchQuery, options }) => {
   return (
     <form className="search-form">
       <Autocomplete
@@ -15,7 +14,7 @@ const SearchBar: React.FC<{ setSearchQuery: (query: string) => void, options: an
             id="search-bar"
             className="text"
             onInput={(e) => {
-              setSearchQuery((e.target as HTMLInputElement).value);
+              setSearchQuery(e.target.value);
             }}
             variant="outlined"
             placeholder="By Category, Company or Brand"
@@ -31,11 +30,11 @@ const SearchBar: React.FC<{ setSearchQuery: (query: string) => void, options: an
   );
 };
 
-const filterData = (query: string, data: any[]) => {
+const filterData = (query, data) => {
   return data.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
 };
 
-const MySearchComponent: React.FC<{ data: any[] }> = ({ data }) => {
+export const MySearchComponent = ({ data }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const dataFiltered = filterData(searchQuery, data);
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { AppBar, Toolbar, Typography, Box } from "@mui/material";
-import MySearchComponent from "../Search/mySearch";
+import { MySearchComponent } from "../Search/mySearch";
 
 const data = [
   { name: 'Option 1' },
@@ -11,7 +11,7 @@ const data = [
   { name: 'Option 5' },
 ];
 
-export const Header: React.FC = () => {
+export const Header = () => {
   return (
     <AppBar position="fixed">
       <Toolbar>
