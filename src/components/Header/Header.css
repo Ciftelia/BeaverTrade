@@ -1,0 +1,16 @@
+/* Header.css */
+.title {
+    flex-grow: 1;
+    text-align: left;
+  }
+  
+  .search-form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .autocomplete {
+    width: min(300px); /* Adjust the value as needed */
+  }
+  
+  
