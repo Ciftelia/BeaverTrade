@@ -4,7 +4,14 @@
   text-align: left;
 }
 
-.search-container {
-  margin-top: 14px;
-  margin-left: 20px; /* Adjust the value as needed */
+
+
+.search-form {
+  display: flex;
+  align-items: center;
 }
+
+.autocomplete {
+  width: min(300px); /* Adjust the value as needed */
+}
+

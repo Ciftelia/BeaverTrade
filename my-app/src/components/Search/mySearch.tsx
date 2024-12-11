@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
-import { TextField, IconButton } from '@mui/material';
+import { TextField, IconButton, Autocomplete } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-const SearchBar: React.FC<{ setSearchQuery: (query: string) => void }> = ({ setSearchQuery }) => {
+
+const SearchBar: React.FC<{ setSearchQuery: (query: string) => void, options: any[] }> = ({ setSearchQuery, options }) => {
   return (
-    <form>
-      <TextField
-        id="search-bar"
-        color="secondary"
-        className="text"
-        onInput={(e) => {
-          setSearchQuery((e.target as HTMLInputElement).value);
-        }}
-        label="Search"
-        variant="outlined"
-        placeholder="By Category, Company or Brand"
-        size="small"
+    <form className="search-form">
+      <Autocomplete
+        freeSolo
+        options={options.map((option) => option.name)}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            id="search-bar"
+            className="text"
+            onInput={(e) => {
+              setSearchQuery((e.target as HTMLInputElement).value);
+            }}
+            variant="outlined"
+            placeholder="By Category, Company or Brand"
+            size="small"
+          />
+        )}
+        className="autocomplete"
       />
       <IconButton type="submit" aria-label="search">
-        <SearchIcon />
+        <SearchIcon style={{ fill: 'blue' }} />
       </IconButton>
     </form>
   );
@@ -30,18 +37,11 @@ const filterData = (query: string, data: any[]) => {
 
 const MySearchComponent: React.FC<{ data: any[] }> = ({ data }) => {
   const [searchQuery, setSearchQuery] = useState('');
-
   const dataFiltered = filterData(searchQuery, data);
 
   return (
     <div>
-      <SearchBar setSearchQuery={setSearchQuery} />
-      {/* Render filtered data */}
-      <ul>
-        {dataFiltered.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+      <SearchBar setSearchQuery={setSearchQuery} options={dataFiltered} />
     </div>
   );
 };
