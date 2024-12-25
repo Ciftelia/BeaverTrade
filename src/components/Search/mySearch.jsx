@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { TextField, IconButton, Autocomplete } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
+import React, { useState, useEffect } from "react";
+import { TextField, IconButton, Autocomplete } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
 const SearchBar = ({ setSearchQuery, options }) => {
   return (
     <form className="search-form">
-      <Autocomplete 
+      <Autocomplete
         freeSolo
         options={options.map((option) => option.name)}
         renderInput={(params) => (
@@ -16,10 +16,6 @@ const SearchBar = ({ setSearchQuery, options }) => {
             onInput={(e) => {
               setSearchQuery(e.target.value);
             }}
-            onClick={(e) => {
-              e.target.value = 
-            }
-          }
             variant="outlined"
             placeholder="By Category, Company or Brand"
             size="small"
@@ -28,18 +24,20 @@ const SearchBar = ({ setSearchQuery, options }) => {
         className="autocomplete"
       />
       <IconButton type="submit" aria-label="search">
-        <SearchIcon style={{ fill: 'secondary' }} />
+        <SearchIcon style={{ fill: "secondary" }} />
       </IconButton>
     </form>
   );
 };
 
 const filterData = (query, data) => {
-  return data.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
+  return data.filter((item) =>
+    item.name.toLowerCase().includes(query.toLowerCase())
+  );
 };
 
 export const MySearchComponent = ({ data }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const dataFiltered = filterData(searchQuery, data);
 
   return (

@@ -49,3 +49,9 @@ body {
 .read-the-docs {
   color: #888;
 }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

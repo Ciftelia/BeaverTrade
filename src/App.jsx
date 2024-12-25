@@ -1,18 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Header } from "./components/Header/Header";
-import './App.css'
+import "./App.css";
+import { Search } from "@mui/icons-material";
+import { MySearchComponent } from "./components/Search/mySearch";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import SearchPage from "./pages/SearchPage";
+import AboutPage from "./pages/AboutPage";
+
+const routes = [
+  {
+    path: "/",
+    element: <SearchPage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
+  },
+];
+const router = createBrowserRouter(routes);
 
 function App() {
-  return (
-    <>
-      <Header />
-      {/* <div>
-        {backendData.map((item, index) => (
-          <p key={index}>{item}</p> // Use index as a key (better to have unique id if possible)
-        ))}
-      </div> */}
-    </>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 }
 
-export default App
+export default App;
