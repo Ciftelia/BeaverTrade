@@ -1,38 +1,24 @@
-import React, { useEffect, useState } from "react";
 import "./Header.css";
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
-import { MySearchComponent } from "../Search/mySearch";
+import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import SearchBar from "../Search/SearchBar";
 
-
-export const Header = () => {
-  const [backendData, setBackendData] = useState([]); // Initialize as an array
-
-  useEffect(() => {
-    fetch("http://localhost:4500/name")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setBackendData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error); // Handle fetch errors
-      });
-  }, []);
-
+const Header = () => {
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" className="toolbar">
       <Toolbar>
-        <Typography variant="h5" className="title" color="secondary">
+        <Button color="inherit" component={Link} to="/">
           BeaverTrade
-        </Typography>
+        </Button>
         <Box className="search-container">
-          <MySearchComponent data={backendData} />
+          <SearchBar />
         </Box>
+        <Button color="inherit" component={Link} to="/about">
+          About
+        </Button>
       </Toolbar>
     </AppBar>
   );
 };
+
+export default Header;

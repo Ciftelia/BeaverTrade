@@ -1,16 +1,18 @@
 /* Header.css */
+
+.toolbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px; /* Add margin to create space between elements */
+}
+
 .title {
-    flex-grow: 1;
-    text-align: left;
-  }
-  
-  .search-form {
-    display: flex;
-    align-items: center;
-  }
-  
-  .autocomplete {
-    width: min(300px); /* Adjust the value as needed */
-  }
-  
-  
+  margin-right: 20px;
+}
