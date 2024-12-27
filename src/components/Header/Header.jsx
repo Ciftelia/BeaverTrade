@@ -1,27 +1,24 @@
-import React from "react";
 import "./Header.css";
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
-import { MySearchComponent } from "../Search/mySearch";
+import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import SearchBar from "../Search/SearchBar";
 
-const data = [
-  { name: 'Option 1' },
-  { name: 'Option 2' },
-  { name: 'Option 3' },
-  { name: 'Option 4' },
-  { name: 'Option 5' },
-];
-
-export const Header = () => {
+const Header = () => {
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" className="toolbar">
       <Toolbar>
-        <Typography variant="h5" className="title">
+        <Button color="inherit" component={Link} to="/">
           BeaverTrade
-        </Typography>
+        </Button>
         <Box className="search-container">
-          <MySearchComponent data={data} />
+          <SearchBar />
         </Box>
+        <Button color="inherit" component={Link} to="/about">
+          About
+        </Button>
       </Toolbar>
     </AppBar>
   );
 };
+
+export default Header;

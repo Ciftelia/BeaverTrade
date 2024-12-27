@@ -2,7 +2,7 @@
   "name": "my-vite-app",
   "private": true,
   "version": "0.0.1",
-  "proxy": "http://localhost:4500",
+  "proxy": "http://localhost:3000",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,7 +17,9 @@
     "@mui/material": "^6.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "react-router": "^7.1.1",
+    "react-router-dom": "^7.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
@@ -29,6 +31,6 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.12.0",
-    "vite": "^6.0.1"
+    "vite": "^6.0.3"
   }
 }

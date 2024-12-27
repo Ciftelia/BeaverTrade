@@ -1,37 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { Header } from "./components/Header/Header";
-import './App.css'
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SearchResults from "./components/Search/SearchResults";
+import AboutPage from "./pages/AboutPage";
+import Header from "./components/Header/Header";
 
 function App() {
-  const [backendData, setBackendData] = useState([]); // Initialize as an array
-
-  useEffect(() => {
-    fetch("http://localhost:4500/name")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        const names = data.map((item) => item.name); // Extract names
-        setBackendData(names);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error); // Handle fetch errors
-      });
-  }, []);
-
   return (
-    <>
-      <Header />
+    <Router>
       <div>
-        {backendData.map((item, index) => (
-          <p key={index}>{item}</p> // Use index as a key (better to have unique id if possible)
-        ))}
+        <Header />
+        <Routes>
+          <Route path="/" element={<></>} />
+          <Route path="/search" element={<SearchResults />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 
-export default App
+export default App;
