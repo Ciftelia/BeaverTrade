@@ -1,0 +1,18 @@
+/* Header.css */
+
+.toolbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 20px; /* Add margin to create space between elements */
+}
+
+.title {
+  margin-right: 20px;
+}
