@@ -1,3 +1,11 @@
+# Set up
+- Clone repository
+- In the terminal, navigate to the repository folder on your computer
+- run ```npm install```
+- run ```npm run dev```
+- run ```o``` to see the app in browser
+
+
 # To do:
 - connect backend to autocomplete search
 - return desired objects when search button is clicked
