@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+const baseURL =
+  window.location.hostname === "localhost" ? "" : "localhost:3000";
+
 const SearchResults = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -13,7 +16,7 @@ const SearchResults = () => {
       setError(null);
       const query = new URLSearchParams(location.search).get("q");
       try {
-        const response = await fetch(`http://localhost:3000/search?q=${query}`);
+        const response = await fetch(`http://${baseURL}/search?q=${query}`);
         const data = await response.json();
         setResults(data);
       } catch (err) {
