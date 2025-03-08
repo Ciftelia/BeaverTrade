@@ -10,8 +10,7 @@ app.use(express.json());
 // Routes
 // Get all data from search
 app.get('/search', (req, res) => {
-  const query = req.query.q?.toLowerCase() || '';
-
+  const query = req.query.q?.toLowerCase() || ''; //get query set to lowercase
   const sqlQuery = 'SELECT * FROM firsttable FULL JOIN locations ON firsttable.id = locations.company_id WHERE LOWER(firsttable.name) LIKE $1';
   const values = [`%${query}%`];
 
@@ -21,7 +20,7 @@ app.get('/search', (req, res) => {
       res.status(500).send('Internal Server Error');
       return;
     }
-    const data = dbRes.rows; // `dbRes.rows` contains the fetched data
+    const data = dbRes.rows; 
     res.json(data);
   });
 });

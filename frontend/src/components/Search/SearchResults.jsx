@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import SearchResultCard from "../SearchResultCard/SearchResultCard";
 
-const baseURL =
-  window.location.hostname === "localhost" ? "" : "localhost:3000";
+const baseURL = "localhost:3000";
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);
