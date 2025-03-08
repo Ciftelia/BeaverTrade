@@ -4,7 +4,9 @@
 import "./SearchResultCard.css";
 
 const SearchResultCard = () => {
-  return <></>;
+  return <><div>
+    </>
+    </>;
 };
 
 export default SearchResultCard;
