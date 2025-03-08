@@ -2,12 +2,12 @@
   width: 90%;
   display: flex;
   flex-direction: row;
+  align-items: center; /* Align items vertically */
 }
 
 .search-input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
@@ -24,3 +24,4 @@
   list-style: none;
   padding: 0;
 }
+

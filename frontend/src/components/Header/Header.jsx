@@ -10,12 +10,12 @@ const Header = () => {
         <Button color="inherit" component={Link} to="/">
           BeaverTrade
         </Button>
-        <Box className="search-container">
-          <SearchBar />
-        </Box>
         <Button color="inherit" component={Link} to="/about">
           About
         </Button>
+        <Box className="search-container">
+          <SearchBar />
+        </Box>
       </Toolbar>
     </AppBar>
   );

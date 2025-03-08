@@ -1,18 +1,18 @@
 /* Header.css */
 
-.toolbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.search-container {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  margin: 0 20px; /* Add margin to create space between elements */
-}
-
-.title {
-  margin-right: 20px;
-}
+.toolbar-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }

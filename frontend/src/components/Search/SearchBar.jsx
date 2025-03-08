@@ -25,6 +25,7 @@ const SearchBar = () => {
         type="submit"
         onClick={handleSearch}
         className="search-button"
+        size="small"
       >
         <SearchIcon />
       </IconButton>

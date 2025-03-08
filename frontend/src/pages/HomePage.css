@@ -1,0 +1,16 @@
+img {
+    width: 30vw;
+    height: 50vh;
+    margin: 5%;
+}
+
+.supercontainer {
+    height: 40%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Align items vertically at the center */
+}
