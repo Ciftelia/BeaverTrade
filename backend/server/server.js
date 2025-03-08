@@ -8,11 +8,11 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-// Get all names
+// Get all data from search
 app.get('/search', (req, res) => {
   const query = req.query.q?.toLowerCase() || '';
 
-  const sqlQuery = 'SELECT * FROM firsttable WHERE LOWER(name) LIKE $1';
+  const sqlQuery = 'SELECT * FROM firsttable FULL JOIN locations ON firsttable.id = locations.company_id WHERE LOWER(firsttable.name) LIKE $1';
   const values = [`%${query}%`];
 
   pool.query(sqlQuery, values, (err, dbRes) => {
@@ -25,6 +25,10 @@ app.get('/search', (req, res) => {
     res.json(data);
   });
 });
+
+// get images
+const path = require('path');
+app.use('/images', express.static('../images')); 
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

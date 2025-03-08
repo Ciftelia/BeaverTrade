@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import SearchResultCard from "../SearchResultCard/SearchResultCard";
 
 const baseURL =
   window.location.hostname === "localhost" ? "" : "localhost:3000";
@@ -36,7 +37,7 @@ const SearchResults = () => {
         {results.length > 0 ? (
           <ul className="results-list">
             {results.map((result, index) => (
-              <li key={index}>{result.name}</li>
+              <SearchResultCard key={index} result={result} />
             ))}
           </ul>
         ) : (
