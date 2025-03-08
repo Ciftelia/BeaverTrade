@@ -11,7 +11,7 @@ app.use(express.json());
 // Get all data from search
 app.get('/search', (req, res) => {
   const query = req.query.q?.toLowerCase() || ''; //get query set to lowercase
-  const sqlQuery = 'SELECT * FROM firsttable FULL JOIN locations ON firsttable.id = locations.company_id WHERE LOWER(firsttable.name) LIKE $1';
+  const sqlQuery = 'SELECT * FROM firsttable FULL JOIN locations ON firsttable.id = locations.company_id WHERE LOWER(firsttable.name) LIKE $1 or LOWER(firsttable.description) LIKE $1';
   const values = [`%${query}%`];
 
   pool.query(sqlQuery, values, (err, dbRes) => {
