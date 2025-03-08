@@ -1,13 +1,14 @@
 import "./App.css";
-import { ReactRouterAppProvider } from "@toolpad/core/react-router";
 import { AppProvider } from "@toolpad/core/AppProvider";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SearchResults from "./components/Search/SearchResults";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import Layout from "./components/Layout/Layout";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
+// integrate DashBoardLayout in the router
+// i'll need to add pagination at some point
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#E6AF2E",
+      main: "#FFDE2C",
     },
     secondary: {
       main: "#632B30",

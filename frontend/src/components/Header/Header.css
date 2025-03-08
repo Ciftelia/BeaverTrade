@@ -1,18 +1,19 @@
 /* Header.css */
 
 .toolbar-content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .search-container {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: -40px;
+}
