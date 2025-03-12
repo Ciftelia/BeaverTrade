@@ -1,16 +1,28 @@
 img {
     width: 30vw;
-    height: 50vh;
-    margin: 5%;
+    height: auto;
+    margin-right: 5%;
 }
 
 .supercontainer {
     height: 40%;
-    width: 100%;
+    max-width: 100%; /* Ensure the supercontainer does not exceed the viewport width */
+    overflow: hidden; /* Prevent content from overflowing the viewport */
 }
 
 .container {
     display: flex;
     flex-direction: row;
     align-items: center; /* Align items vertically at the center */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    padding: 20px;
+    max-width: 100%; /* Ensure the container does not exceed the viewport width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.text {
+    flex: 1; /* Allow text to take up remaining space */
+    min-width: 200px; /* Ensure text has a minimum width */
+    text-align: center; /* Center text horizontally */
 }

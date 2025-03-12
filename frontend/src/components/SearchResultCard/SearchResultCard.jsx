@@ -1,27 +1,55 @@
-// To build this component, we need to know the structure of the data that we will be receiving from the API.
-// For now, go by the Figma sample for Threadco.
-// Try to build a copy of it, it doesn't need to be perfect, just has to contain most or all of the data.
 import "./SearchResultCard.css";
+import { Card, CardContent, CardActionArea, Typography } from "@mui/material";
+import { CardMedia } from "@mui/material";
 
 const SearchResultCard = ({ id, result }) => {
   return (
-    <>
-      <br></br>
-      <div>
-        <img src={`http://localhost:3000/images/${result.logo_url}`}></img>
-        <div>{result.name}</div>
-        <div>{result.description}</div>
-        <div>{result.phone_number}</div>
-        <div>{result.email}</div>
-        <div>
-          <div>{result.city}</div>
-          <div>{result.province}</div>
-          <div>{result.address}</div>
-          <div>{result.postal_code}</div>
+    <CardActionArea>
+      <Card
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          marginBottom: "20px",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <CardMedia
+          component="img"
+          style={{ width: "150px", height: "150px" }}
+          image={`http://localhost:3000/images/${result.logo_url}`}
+          alt={result.name}
+        />
+        <div style={{ flex: "1", textAlign: "center" }}>
+          <CardContent>
+            <Typography variant="h6">{result.name}</Typography>
+            <Typography variant="body2">{result.description}</Typography>
+          </CardContent>
+          <CardContent
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="body2">{result.phone_number}</Typography>
+            <Typography variant="body2">{result.email}</Typography>
+          </CardContent>
+          <CardContent
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="body2">{result.city}</Typography>
+            <Typography variant="body2">{result.province}</Typography>
+            <Typography variant="body2">{result.address}</Typography>
+            <Typography variant="body2">{result.postal_code}</Typography>
+          </CardContent>
         </div>
-      </div>
-      <br></br>
-    </>
+      </Card>
+    </CardActionArea>
   );
 };
 
